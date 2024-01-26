@@ -11,6 +11,13 @@ export default function DownloaderComponent({
     refToDownload,
     recipeName,
 }: IDownload) {
+    const filterSecretElements = (node: HTMLElement) => {
+        const exclusionClasses = ["secret"];
+        return !exclusionClasses.some((classname) =>
+            node.classList?.contains(classname)
+        );
+    };
+
     const saveRecipe = useCallback(() => {
         if (refToDownload.current === null) {
             return;
@@ -19,6 +26,7 @@ export default function DownloaderComponent({
         toJpeg(refToDownload.current, {
             cacheBust: true,
             backgroundColor: "#FFF",
+            filter: filterSecretElements,
         })
             .then((dataUrl) => {
                 download(dataUrl, `${recipeName}.jpeg`);
@@ -30,7 +38,12 @@ export default function DownloaderComponent({
 
     return (
         <div>
-            <button onClick={saveRecipe}>download</button>
+            <button
+                onClick={saveRecipe}
+                className='bg-primary-300 hover:bg-primary-200 text-white font-bold py-2 px-10 active:mt-0.5 border-b-4 border-primary hover:border-primary-400 rounded tracking-wider'
+            >
+                Export Recipe
+            </button>
         </div>
     );
 }

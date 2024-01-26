@@ -1,25 +1,31 @@
 import { useNavigate } from "react-router";
+import { Recipe } from "../../types/Recipe.type";
+import { Recipes } from "../../data/Data";
 
 export default function HomePage() {
+    return (
+        <div>
+            {Recipes.map((recipe, index) => (
+                <RecipeLineItem recipe={recipe} key={index} />
+            ))}
+        </div>
+    );
+}
+
+type IRecipeLineItem = {
+    recipe: Recipe;
+};
+
+function RecipeLineItem({ recipe }: IRecipeLineItem) {
     const navigate = useNavigate();
-    const goToRecipe = (name: string) => {
-        navigate(`recipes/${name}`);
+
+    const goToRecipe = (id: string) => {
+        navigate(`recipes/${id}`);
     };
 
     return (
-        <div>
-            <li
-                className='cursor-pointer'
-                onClick={() => goToRecipe("spinach-bacon-bread")}
-            >
-                Spinach Bacon Bread
-            </li>
-            <li
-                className='cursor-pointer'
-                onClick={() => goToRecipe("chicken-mushroom-pizza")}
-            >
-                Chicken Mushroom Pizza
-            </li>
+        <div className='cursor-pointer' onClick={() => goToRecipe(recipe.id)}>
+            {recipe.name}
         </div>
     );
 }

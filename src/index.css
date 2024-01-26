@@ -1,9 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.cdnfonts.com/css/signature-font");
+@import url("https://fonts.cdnfonts.com/css/themysion");
+@import url("https://fonts.cdnfonts.com/css/ballet");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.base-recipe-page {
+/* .base-recipe-page {
     height: 297mm;
     width: 210mm;
-    border: solid 1px black;
+    transform-origin: top left;
+} */
+/* .base-recipe-page {
+    height: 1754px;
+    width: 1240px;
+
+    transform-origin: top;
+} */
+.base-recipe-page {
+    height: 3508px;
+    width: 2480px;
 }
+/* .base-recipe-page {
+    height: (297mm / 25.4) * 109;
+    width: (210mm / 25.4) * 109;
+    border: solid 1px black;
+} */
+/* Electron PDF */
+
+/* 794 x 1123 -> 96 ppi */
+/* | Ratio : 1.56 |              | Ratio : 3.12 | */
+/* 1240 x 1754 -> 150 ppi        |              | */
+/* | Ratio : 2 |                 |              | */
+/* 2480 x 3508 -> 300 ppi */
