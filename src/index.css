@@ -7,21 +7,20 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .base-recipe-page {
+.base-recipe-page {
     height: 297mm;
     width: 210mm;
-    transform-origin: top left;
-} */
+}
 /* .base-recipe-page {
     height: 1754px;
     width: 1240px;
 
     transform-origin: top;
 } */
-.base-recipe-page {
+/* .base-recipe-page {
     height: 3508px;
     width: 2480px;
-}
+} */
 /* .base-recipe-page {
     height: (297mm / 25.4) * 109;
     width: (210mm / 25.4) * 109;

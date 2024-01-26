@@ -7,7 +7,7 @@ export const TEMPLATE_ONE: TemplateItem = {
     template: (recipe: Recipe) => <RecipeTemplateOne recipe={recipe} />,
 };
 
-const scale = 3.12;
+const scale = 1;
 const scalePx = (baseFontSize: number) => {
     return `${baseFontSize * scale}px`;
 };
