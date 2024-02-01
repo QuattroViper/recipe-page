@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import DownloaderComponent from "../downloader/Download.component";
 import { Recipe } from "../../types/Recipe.type";
@@ -105,18 +105,23 @@ type IRecipePageItem = {
 function RecipePageItem({ page, index, recipe, template }: IRecipePageItem) {
     const { addPageRef, removePageRef } = useRecipePageRefs();
     const ref = useRef<HTMLDivElement | null>(null);
+    const [currentPageId, setCurrentPageId] = useState("");
 
     useEffect(() => {
+        console.log("ran");
+
         const pageId = addPageRef(
             ref,
             `${recipe.id}-${template.id}-${index + 1}`
         );
-
-        return () => {
-            removePageRef(pageId);
-            ref.current = null;
-        };
+        setCurrentPageId(pageId);
+        return () => {};
     }, [template]);
+
+    useLayoutEffect(() => {
+        removePageRef(currentPageId);
+        // ref.current = null;
+    }, []);
 
     return (
         <div

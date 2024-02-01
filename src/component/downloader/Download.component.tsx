@@ -1,6 +1,6 @@
 import download from "downloadjs";
 import { toPng } from "html-to-image";
-import { Ref, useCallback, useRef } from "react";
+import { useCallback } from "react";
 import useToast from "../toast/Toast.state";
 import DownloadToast from "../toast/Download.toast";
 import useRecipePageRefs from "../recipe-viewer/Viewer.state";
