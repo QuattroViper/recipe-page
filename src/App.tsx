@@ -40,7 +40,7 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <div className='flex flex-row items-center h-16 mx-28'>
+        <div className='sticky top-0 z-50 flex flex-row items-center h-16 mx-28'>
             <div className='flex flex-row items-center justify-between w-full gap-4'>
                 <h4
                     className='text-2xl font-bold text-transparent cursor-pointer bg-clip-text bg-gradient-to-r to-secondary-600 from-primary-400'

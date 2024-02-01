@@ -75,13 +75,13 @@ function RecipeViewComponent({ recipe }: IRecipeView) {
                     />
                 ))}
             </div>
-            <div className='w-full xl:w-1/6 rounded-xl md:min-w-24'>
+            <div className='sticky self-start w-full xl:w-1/6 rounded-xl md:min-w-24 top-16'>
                 <div className='mb-2 text-slate-800'>
                     <span className='text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r to-secondary-600 from-primary-400'>
                         Templates:
                     </span>
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2 top-16'>
                     {Templates.map((item, index) => (
                         <TemplateLineItem
                             key={index}
