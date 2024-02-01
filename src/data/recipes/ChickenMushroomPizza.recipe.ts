@@ -3,6 +3,7 @@ import { Recipe } from "../../types/Recipe.type";
 export const CHICKEN_MUSHROOM_PIZZA: Recipe = {
     id: "chicken-mushroom-pizza",
     name: "Chicken Mushroom Pizza",
+    description: "Description",
     ingredients: [
         {
             name: "Pizza Base",
@@ -10,4 +11,5 @@ export const CHICKEN_MUSHROOM_PIZZA: Recipe = {
         },
     ],
     instructions: ["Make the pizza"],
+    nutrients: [],
 };

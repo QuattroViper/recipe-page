@@ -10,7 +10,9 @@ export default {
         'xxs': '0.625em'/* 10px */,
         // '3xl': '5rem',
       },
-
+      transitionProperty: {
+        'loading': 'width 0.3s ease-out'
+      },
       fontFamily: {
         'darker-grotesque': ['"Darker Grotesque"'],
         'signature': ['"Signature Font"'],

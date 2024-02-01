@@ -3,11 +3,13 @@ import { ReactNode } from "react";
 export type Recipe = {
     id: string;
     name: string;
-    ingredients: Array<RecipeIngredient>;
+    description: string;
+    ingredients: Array<RecipeNameValue>;
     instructions: Array<String>;
+    nutrients: Array<RecipeNameValue>;
 };
 
-export type RecipeIngredient = {
+export type RecipeNameValue = {
     name: string;
     amount: string;
 };
@@ -19,5 +21,5 @@ export type IRecipeTemplate = {
 export type TemplateItem = {
     id: string;
     name: string;
-    template: (recipe: Recipe) => ReactNode;
+    template: (recipe: Recipe) => Array<ReactNode>;
 };

@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import HomePage from "./component/home/Home.page";
 import RecipeViewerPage from "./component/recipe-viewer/Viewer.page";
+import ToastComponent from "./component/toast/Toast.component";
 
 export default function AppRouterDefinition() {
     const router = createBrowserRouter(
@@ -28,6 +29,7 @@ function AppMainLayout() {
         <div className='min-h-screen '>
             <Header />
             {/* <ReactQueryDevtools /> */}
+            <ToastComponent />
             <Outlet />
         </div>
     );

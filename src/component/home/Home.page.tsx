@@ -4,10 +4,12 @@ import { Recipes } from "../../data/Data";
 
 export default function HomePage() {
     return (
-        <div>
-            {Recipes.map((recipe, index) => (
-                <RecipeLineItem recipe={recipe} key={index} />
-            ))}
+        <div className='px-4'>
+            <div className='flex flex-row gap-4'>
+                {Recipes.map((recipe, index) => (
+                    <RecipeLineItem recipe={recipe} key={index} />
+                ))}
+            </div>
         </div>
     );
 }
@@ -24,8 +26,15 @@ function RecipeLineItem({ recipe }: IRecipeLineItem) {
     };
 
     return (
-        <div className='cursor-pointer' onClick={() => goToRecipe(recipe.id)}>
-            {recipe.name}
+        <div
+            className='flex flex-col gap-2 p-3 border shadow-lg cursor-pointer rounded-xl hover:border-primary-300/50 border-primary-50/80 shadow-primary-50/30 from-primary-200 to-secondary-200'
+            onClick={() => goToRecipe(recipe.id)}
+        >
+            <img
+                className='object-contain rounded-lg w-72'
+                src={`/public/recipe-images/${recipe.id}.jpg`}
+            />
+            <span className='font-semibold text-slate-700'>{recipe.name}</span>
         </div>
     );
 }

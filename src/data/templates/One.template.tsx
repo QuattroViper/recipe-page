@@ -4,75 +4,22 @@ import { IRecipeTemplate, Recipe, TemplateItem } from "../../types/Recipe.type";
 export const TEMPLATE_ONE: TemplateItem = {
     id: "template-one",
     name: "Template One",
-    template: (recipe: Recipe) => <RecipeTemplateOne recipe={recipe} />,
+    template: (recipe: Recipe) => [<RecipeTemplateOne recipe={recipe} />],
 };
 
-const scale = 1;
-const scalePx = (baseFontSize: number) => {
-    return `${baseFontSize * scale}px`;
-};
-
-const scaleEm = (baseFontSize: number) => {
-    return `${baseFontSize * scale}em`;
-};
-
-export default function RecipeTemplateOne({ recipe }: IRecipeTemplate) {
+function RecipeTemplateOne({ recipe }: IRecipeTemplate) {
     return (
-        <div
-            style={{
-                paddingTop: scalePx(16),
-                paddingBottom: scalePx(128),
-            }}
-            className='h-full'
-        >
-            <div
-                style={{
-                    gap: scalePx(24),
-                }}
-                className='flex flex-col'
-            >
-                <div
-                    style={{
-                        marginLeft: scalePx(80),
-                        marginRight: scalePx(80),
-                    }}
-                >
-                    <h1
-                        style={{
-                            fontSize: scalePx(30),
-                            padding: scalePx(20),
-                            lineHeight: scalePx(20),
-                        }}
-                        className='font-semibold tracking-widest text-center text-slate-700 font-darker-grotesque'
-                    >
+        <div className='h-full pt-4 pb-32'>
+            <div className='flex flex-col gap-6'>
+                <div className='px-20'>
+                    <h1 className='p-5 text-4xl font-semibold leading-5 tracking-widest text-center pb-7 text-slate-700 font-darker-grotesque'>
                         {recipe.name}
                     </h1>
-                    <hr
-                        style={{
-                            borderWidth: scalePx(1),
-                        }}
-                    />
+                    <hr />
                 </div>
-                <div
-                    style={{
-                        marginLeft: scalePx(80),
-                        marginRight: scalePx(80),
-                    }}
-                >
-                    <p
-                        style={{
-                            fontSize: scalePx(14),
-                            lineHeight: scalePx(20),
-                            letterSpacing: scaleEm(0.05),
-                        }}
-                        className='text-center text-slate-600 font-darker-grotesque'
-                    >
-                        This mouthwatering dish combines the rich flavors of
-                        sautéed spinach and crispy bacon, nestled on a bed of
-                        freshly cut open ciabatta bread. The creamy texture of
-                        the spinach is perfectly complemented by the savory
-                        notes of the bacon, creating a symphony of flavors that
-                        dance on your palate.
+                <div className='px-20'>
+                    <p className='leading-5 tracking-wider text-center text-slate-600 font-darker-grotesque'>
+                        {recipe.description}
                     </p>
                 </div>
                 <div>
@@ -85,26 +32,13 @@ export default function RecipeTemplateOne({ recipe }: IRecipeTemplate) {
                         </div>
                         <div className='w-full basis-3/12'>
                             <div></div>
-                            <h4
-                                style={{
-                                    fontSize: scalePx(24),
-                                    lineHeight: scalePx(32),
-                                    marginTop: scalePx(128),
-                                }}
-                                className='-rotate-90 opacity-40 font-ballet'
-                            >
+                            <h4 className='mt-32 text-2xl -rotate-90 text-slate-400 font-ballet'>
                                 Marno van Niekerk
                             </h4>
                         </div>
                     </div>
                 </div>
-                <div
-                    className='flex flex-row'
-                    style={{
-                        marginLeft: scalePx(80),
-                        marginRight: scalePx(80),
-                    }}
-                >
+                <div className='flex flex-row px-20'>
                     <div className='basis-8/12'>
                         <div className='flex flex-row justify-between'>
                             <RecipeMetaInfo
@@ -123,49 +57,21 @@ export default function RecipeTemplateOne({ recipe }: IRecipeTemplate) {
                         </div>
                     </div>
                 </div>
-                <div
-                    className='flex flex-row'
-                    style={{
-                        marginLeft: scalePx(80),
-                        marginRight: scalePx(80),
-                        gap: scalePx(40),
-                    }}
-                >
+                <div className='flex flex-row gap-10 px-20'>
                     <div className='basis-4/12'>
-                        <h3
-                            style={{
-                                fontSize: scalePx(18),
-                                lineHeight: scalePx(28),
-                            }}
-                            className='font-semibold text-slate-700 font-darker-grotesque'
-                        >
+                        <h3 className='text-xl font-semibold text-slate-700 font-darker-grotesque'>
                             Ingredients
                         </h3>
                         <div>
                             {recipe.ingredients.map((ingredient, index) => (
                                 <div
-                                    style={{
-                                        paddingBottom: scalePx(2),
-                                    }}
                                     key={index}
                                     className='flex flex-row justify-between'
                                 >
-                                    <span
-                                        style={{
-                                            fontSize: scalePx(14),
-                                            lineHeight: scalePx(20),
-                                        }}
-                                        className='text-slate-600 font-darker-grotesque'
-                                    >
+                                    <span className='leading-[1.3] text-slate-600 font-darker-grotesque'>
                                         {ingredient.name}
                                     </span>
-                                    <span
-                                        style={{
-                                            fontSize: scalePx(14),
-                                            lineHeight: scalePx(20),
-                                        }}
-                                        className='text-slate-600 font-darker-grotesque'
-                                    >
+                                    <span className='leading-[1.3] text-slate-600 font-darker-grotesque'>
                                         {ingredient.amount}
                                     </span>
                                 </div>
@@ -173,41 +79,19 @@ export default function RecipeTemplateOne({ recipe }: IRecipeTemplate) {
                         </div>
                     </div>
                     <div className='pr-4 basis-8/12'>
-                        <h3
-                            style={{
-                                fontSize: scalePx(18),
-                                lineHeight: scalePx(28),
-                            }}
-                            className='font-semibold text-slate-700 font-darker-grotesque'
-                        >
+                        <h3 className='text-xl font-semibold text-slate-700 font-darker-grotesque'>
                             Instructions
                         </h3>
                         <div>
                             {recipe.instructions.map((instruction, index) => (
                                 <div
-                                    style={{
-                                        gap: scalePx(4),
-                                        paddingBottom: scalePx(2),
-                                    }}
                                     key={index}
-                                    className='flex flex-row'
+                                    className='flex flex-row gap-1 pb-0.5'
                                 >
-                                    <span
-                                        style={{
-                                            fontSize: scalePx(14),
-                                            lineHeight: scalePx(20),
-                                        }}
-                                        className='text-slate-600 font-darker-grotesque'
-                                    >
+                                    <span className='leading-[1.3] text-slate-600 font-darker-grotesque'>
                                         {index + 1}.
                                     </span>
-                                    <span
-                                        style={{
-                                            fontSize: scalePx(14),
-                                            lineHeight: scalePx(20),
-                                        }}
-                                        className='text-slate-600 font-darker-grotesque'
-                                    >
+                                    <span className='leading-[1.3] text-slate-600 font-darker-grotesque'>
                                         {instruction}
                                     </span>
                                 </div>
@@ -216,48 +100,16 @@ export default function RecipeTemplateOne({ recipe }: IRecipeTemplate) {
                     </div>
                 </div>
                 <div></div>
-                <div
-                    style={{
-                        marginLeft: scalePx(80),
-                        marginRight: scalePx(80),
-                        borderLeftWidth: scalePx(1),
-                        borderRightWidth: scalePx(1),
-                        borderTopWidth: scalePx(1),
-                    }}
-                    className='border-slate-300'
-                >
+                <div className='mx-20 border-t border-l border-r border-slate-300'>
                     <div className='flex flex-row items-start justify-between divide-x divide-slate-300'>
-                        <RecipeNutrientItem
-                            name='Calories'
-                            value='560kcal'
-                            height='4'
-                        />
-                        <RecipeNutrientItem
-                            name='Fiber'
-                            value='7g'
-                            height='8'
-                        />
-                        <RecipeNutrientItem
-                            name='Protien'
-                            value='10g'
-                            height='2'
-                        />
-                        <RecipeNutrientItem
-                            name='Carbs'
-                            value='90g'
-                            height='4'
-                        />
-                        <RecipeNutrientItem
-                            name='Sugars'
-                            value='6g'
-                            height='12'
-                        />
-                        <RecipeNutrientItem name='Fat' value='12g' height='4' />
-                        <RecipeNutrientItem
-                            name='Salt'
-                            value='2.1g'
-                            height='6'
-                        />
+                        {recipe.nutrients.map((nutrient, index) => (
+                            <RecipeNutrientItem
+                                key={index}
+                                name={nutrient.name}
+                                value={nutrient.amount}
+                                index={index}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -273,22 +125,10 @@ type IRecipeMetaInfo = {
 function RecipeMetaInfo({ name, value }: IRecipeMetaInfo) {
     return (
         <div>
-            <div
-                style={{
-                    fontSize: scalePx(12),
-                    lineHeight: scalePx(12),
-                }}
-                className='font-semibold uppercase font-darker-grotesque text-slate-800'
-            >
+            <div className='text-sm font-semibold leading-3 uppercase font-darker-grotesque text-slate-800'>
                 {name}
             </div>
-            <div
-                style={{
-                    fontSize: scalePx(14),
-                    lineHeight: scalePx(14),
-                }}
-                className='font-normal uppercase font-darker-grotesque text-slate-700'
-            >
+            <div className='font-normal leading-5 uppercase font-darker-grotesque text-slate-700'>
                 {value}
             </div>
         </div>
@@ -298,48 +138,33 @@ function RecipeMetaInfo({ name, value }: IRecipeMetaInfo) {
 type IRecipeNutrientItem = {
     name: string;
     value: string;
-    height: "2" | "4" | "6" | "8" | "12";
+    index: number;
 };
 
-function RecipeNutrientItem({ name, value, height }: IRecipeNutrientItem) {
+function RecipeNutrientItem({ name, value, index }: IRecipeNutrientItem) {
     const getHeight = () => {
-        switch (height) {
-            case "2":
-                return cntl``;
-            case "4":
+        switch (index) {
+            case 0:
                 return cntl`h-4`;
-            case "6":
-                return cntl`h-6`;
-            case "8":
+            case 1:
                 return cntl`h-8`;
-            case "12":
+            case 2:
+                return cntl``;
+            case 3:
+                return cntl`h-4`;
+            case 4:
                 return cntl`h-12`;
+            case 5:
+                return cntl`h-6`;
         }
     };
 
     return (
-        <div
-            style={{
-                paddingTop: scalePx(12),
-            }}
-            className='flex flex-col items-center justify-center w-full'
-        >
-            <span
-                style={{
-                    lineHeight: scalePx(12),
-                    fontSize: scalePx(10),
-                }}
-                className='font-bold text-center uppercase text-slate-800 font-darker-grotesque'
-            >
+        <div className='flex flex-col items-center justify-center w-full pt-3'>
+            <span className='text-xs font-bold leading-3 text-center uppercase text-slate-800 font-darker-grotesque'>
                 {name}
             </span>
-            <span
-                style={{
-                    lineHeight: scalePx(16),
-                    fontSize: scalePx(16),
-                }}
-                className='text-slate-600 font-darker-grotesque'
-            >
+            <span className='text-lg leading-4 text-slate-600 font-darker-grotesque'>
                 {value}
             </span>
             <div className={getHeight()}></div>

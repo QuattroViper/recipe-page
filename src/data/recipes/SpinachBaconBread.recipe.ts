@@ -3,6 +3,8 @@ import { Recipe } from "../../types/Recipe.type";
 export const SPINACH_BACON_BREAD: Recipe = {
     id: "spinach-bacon-bread",
     name: "Spinach Bacon Bread",
+    description:
+        "This mouthwatering dish combines the rich flavors of sautéed spinach and crispy bacon, nestled on a bed of freshly cut open ciabatta bread. The creamy texture of the spinach is perfectly complemented by the savory notes of the bacon, creating a symphony of flavors that dance on your palate.",
     ingredients: [
         {
             name: "Spinach Leaves",
@@ -42,5 +44,35 @@ export const SPINACH_BACON_BREAD: Recipe = {
         "Pour the heavy cream into the skillet with the sautéed spinach and mushrooms. Stir well to combine, allowing the cream to thicken and coat the spinach.",
         "In a separate pan, cook the bacon until it's crispy.",
         "Place the bacon on top of the toasted ciabatta bread, place the creamy spinach and mushroom mixture generously on top of the bacon. Sprinkle the crumbled feta cheese over the top.",
+    ],
+    nutrients: [
+        {
+            name: "Calories",
+            amount: "560kcal",
+        },
+        {
+            name: "Fiber",
+            amount: "7g",
+        },
+        {
+            name: "Protien",
+            amount: "10g",
+        },
+        {
+            name: "Carbs",
+            amount: "90g",
+        },
+        {
+            name: "Sugars",
+            amount: "6g",
+        },
+        {
+            name: "Fat",
+            amount: "12g",
+        },
+        {
+            name: "Salt",
+            amount: "2.1g",
+        },
     ],
 };
