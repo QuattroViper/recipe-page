@@ -1,16 +1,15 @@
-import { RefObject } from "react";
 import { atom, useRecoilState } from "recoil";
 
 type RecipePageRef = {
     id: string;
-    pageRef: RefObject<HTMLDivElement>;
+    pageRef: HTMLDivElement | null;
     pageFileName: string;
 };
 
 const recipePageRefsStateAtom = atom<Array<RecipePageRef>>({
     key: "page-ref-state",
     default: [],
-    dangerouslyAllowMutability: true,
+    // dangerouslyAllowMutability: true,
 });
 
 export default function useRecipePageRefs() {
@@ -19,7 +18,7 @@ export default function useRecipePageRefs() {
     );
 
     const addPageRef = (
-        pageRef: RefObject<HTMLDivElement>,
+        pageRef: HTMLDivElement | null,
         pageFileName: string
     ): string => {
         const id = Math.random().toString(16).slice(2);

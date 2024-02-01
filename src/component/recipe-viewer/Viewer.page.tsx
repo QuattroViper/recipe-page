@@ -108,19 +108,15 @@ function RecipePageItem({ page, index, recipe, template }: IRecipePageItem) {
     const [currentPageId, setCurrentPageId] = useState("");
 
     useEffect(() => {
-        console.log("ran");
-
         const pageId = addPageRef(
-            ref,
+            ref.current,
             `${recipe.id}-${template.id}-${index + 1}`
         );
         setCurrentPageId(pageId);
-        return () => {};
     }, [template]);
 
     useLayoutEffect(() => {
         removePageRef(currentPageId);
-        // ref.current = null;
     }, []);
 
     return (

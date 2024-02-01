@@ -12,9 +12,7 @@ export const TEMPLATE_THREE: TemplateItem = {
 function RecipeTemplateThreePageOne({ recipe }: IRecipeTemplate) {
     return (
         <div className='base-recipe-page'>
-            <h1 className='text-3xl font-bold underline'>
-                Hello world!! Page One
-            </h1>
+            <h1 className='text-xl font-bold underline'>{recipe.name}</h1>
         </div>
     );
 }
@@ -22,8 +20,8 @@ function RecipeTemplateThreePageOne({ recipe }: IRecipeTemplate) {
 function RecipeTemplateThreePageTwo({ recipe }: IRecipeTemplate) {
     return (
         <div className='base-recipe-page'>
-            <h1 className='text-3xl font-bold underline'>
-                Hello world!! Page two
+            <h1 className='text-xl font-bold underline'>
+                {recipe.description}
             </h1>
         </div>
     );

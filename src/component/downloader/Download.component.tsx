@@ -18,13 +18,13 @@ export default function DownloaderComponent({}: IDownload) {
     };
 
     const downloadFile = (
-        refToDownload: React.RefObject<HTMLDivElement>,
+        refToDownload: HTMLDivElement | null,
         fileName: string
     ) => {
-        if (refToDownload.current === null) {
+        if (refToDownload === null) {
             return;
         }
-        toPng(refToDownload.current, {
+        toPng(refToDownload, {
             cacheBust: true,
             backgroundColor: "#FFF",
             filter: filterSecretElements,
