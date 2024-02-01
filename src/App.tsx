@@ -9,6 +9,7 @@ import {
 import HomePage from "./component/home/Home.page";
 import RecipeViewerPage from "./component/recipe-viewer/Viewer.page";
 import ToastComponent from "./component/toast/Toast.component";
+import DownloaderComponent from "./component/downloader/Download.component";
 
 export default function AppRouterDefinition() {
     const router = createBrowserRouter(
@@ -39,17 +40,16 @@ function Header() {
     const navigate = useNavigate();
 
     return (
-        <div className='flex flex-row items-center pt-2 mx-2 mb-6'>
-            <h4 className='text-2xl font-bold text-primary-400'>
-                Recipe Page Creator
-            </h4>
-            <div className='flex flex-row gap-4 ml-20'>
-                <a
+        <div className='flex flex-row items-center h-16 mx-28'>
+            <div className='flex flex-row items-center justify-between w-full gap-4'>
+                <h4
+                    className='text-2xl font-bold text-transparent cursor-pointer bg-clip-text bg-gradient-to-r to-secondary-600 from-primary-400'
                     onClick={() => navigate("/")}
-                    className='font-semibold cursor-pointer'
                 >
-                    Home
-                </a>
+                    Recipe Page Creator
+                </h4>
+
+                <DownloaderComponent />
             </div>
         </div>
     );

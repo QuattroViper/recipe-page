@@ -53,11 +53,15 @@ export default function DownloaderComponent({}: IDownload) {
         });
     }, [pageRefs]);
 
+    if (pageRefs.length === 0) {
+        return <div />;
+    }
+
     return (
         <div>
             <button
                 onClick={saveRecipe}
-                className='bg-primary-300 border-grad bg-gradient-to-r from-primary-400 to-secondary-400 hover:from-primary-300 hover:to-secondary-300 hover:bg-primary-200 text-white font-bold py-2 px-10 active:mt-0.5 border-b-4 border-primary hover:border-primary-400 rounded tracking-wider'
+                className='px-10 py-2 font-bold tracking-widest text-white uppercase rounded text bg-primary-300 bg-gradient-to-r from-primary-400 to-secondary-400 hover:from-primary-300 hover:to-secondary-300 hover:bg-primary-200'
             >
                 Export Recipe
             </button>

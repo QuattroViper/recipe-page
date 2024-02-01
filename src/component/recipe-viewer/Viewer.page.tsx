@@ -1,6 +1,5 @@
 import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import DownloaderComponent from "../downloader/Download.component";
 import { Recipe } from "../../types/Recipe.type";
 import { FaArrowRight } from "react-icons/fa6";
 import cntl from "cntl";
@@ -34,7 +33,7 @@ export default function RecipeViewerPage() {
     }, [id]);
 
     if (!recipe) {
-        return <>not found</>;
+        return <></>;
     }
 
     return <RecipeViewComponent recipe={recipe} />;
@@ -58,6 +57,10 @@ function RecipeViewComponent({ recipe }: IRecipeView) {
         resetPageState();
         setSelectedTemplate(template);
     };
+
+    useEffect(() => {
+        return () => resetPageState();
+    }, []);
 
     return (
         <div className='flex flex-row justify-center gap-16 md:mx-14 mx-36'>
@@ -88,9 +91,7 @@ function RecipeViewComponent({ recipe }: IRecipeView) {
                         />
                     ))}
                 </div>
-                <div className='mt-4'>
-                    <DownloaderComponent />
-                </div>
+                <div className='mt-4'></div>
             </div>
         </div>
     );

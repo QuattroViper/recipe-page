@@ -4,7 +4,7 @@ import { Recipes } from "../../data/Data";
 
 export default function HomePage() {
     return (
-        <div className='px-4'>
+        <div className='mx-28'>
             <div className='flex flex-row gap-4'>
                 {Recipes.map((recipe, index) => (
                     <RecipeLineItem recipe={recipe} key={index} />
