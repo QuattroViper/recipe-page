@@ -3,6 +3,9 @@ import { Recipe } from "../../types/Recipe.type";
 export const SPINACH_BACON_BREAD: Recipe = {
     id: "spinach-bacon-bread",
     name: "Spinach Bacon Bread",
+    cost: 0,
+    duration: 0,
+    servingSize: 0,
     description:
         "This mouthwatering dish combines the rich flavors of sautéed spinach and crispy bacon, nestled on a bed of freshly cut open ciabatta bread. The creamy texture of the spinach is perfectly complemented by the savory notes of the bacon, creating a symphony of flavors that dance on your palate.",
     ingredients: [

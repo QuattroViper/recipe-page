@@ -5,6 +5,7 @@ import { CHICKEN_MUSHROOM_PIZZA } from "./recipes/ChickenMushroomPizza.recipe";
 import { SPINACH_BACON_BREAD } from "./recipes/SpinachBaconBread.recipe";
 import { BANANA_BREAD } from "./recipes/BananaBread.recipe";
 import { TEMPLATE_THREE } from "./templates/Three.template";
+import { COATED_CHICKEN_BREAST } from "./recipes/CoatedChickenBreast.recipe";
 
 export const Templates: Array<TemplateItem> = [
     TEMPLATE_ONE,
@@ -16,4 +17,5 @@ export const Recipes: Array<Recipe> = [
     SPINACH_BACON_BREAD,
     CHICKEN_MUSHROOM_PIZZA,
     BANANA_BREAD,
+    COATED_CHICKEN_BREAST,
 ];

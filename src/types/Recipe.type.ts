@@ -7,6 +7,9 @@ export type Recipe = {
     ingredients: Array<RecipeNameValue>;
     instructions: Array<String>;
     nutrients: Array<RecipeNameValue>;
+    cost: number;
+    servingSize: number;
+    duration: number;
 };
 
 export type RecipeNameValue = {

@@ -3,6 +3,9 @@ import { Recipe } from "../../types/Recipe.type";
 export const BANANA_BREAD: Recipe = {
     id: "banana-bread",
     name: "Banana Bread",
+    cost: 0,
+    duration: 0,
+    servingSize: 0,
     description:
         "You will love this (gluten free!) chocolate chip banana bread. Moist, soft, with a gentle caramel flavour coming from the brown sugar and ripe bananas, and generously loaded with chocolate chips… there is nothing not to love about this wonderful bake that walks the line between breakfast, snack and dessert.",
     ingredients: [
